@@ -1,4 +1,7 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+
+import 'GiniWish.dart';
 
 class MyGiniPage extends StatelessWidget {
   const MyGiniPage({super.key});
@@ -6,17 +9,34 @@ class MyGiniPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
+        body: SafeArea(
+      child: Column(
         children: [
-          Container(
-            height: 50,
-            width: 50,
-            decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage("assetName"))
+          Center(
+            child: Container(
+              height: 330,
+              width: 300,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/ginis.png"),
+                  fit: BoxFit.fill,
+                ),
+              ),
             ),
-          )
+          ),
+          SizedBox(height: 40),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                FadeInLeftBig(child: GiniWish()),
+                FadeInDown(child: GiniWish()),
+                FadeInRight(child: GiniWish()),
+              ],
+            ),
+          ),
         ],
       ),
-    );
+    ));
   }
 }
