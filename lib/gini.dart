@@ -35,7 +35,7 @@ class _MyGiniPageState extends State<MyGiniPage> {
           const SizedBox(height: 40),
           const Text(
             "Abracadabra",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 40),
           SingleChildScrollView(
